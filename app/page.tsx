@@ -1,65 +1,1337 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className='relative min-h-screen overflow-hidden'>
+      <div className='absolute top-0 right-0 -translate-y-1/3 translate-x-1/3'>
+        <div className='w-[80vw] h-[80vw] md:w-[60vw] md:h-[60vw] lg:w-[50vw] lg:h-[50vw] rounded-full border border-red-500/20'>
+          <div className='w-full h-full rounded-full border border-red-500/20 p-4'>
+            <div className='w-full h-full rounded-full border border-red-500/20 p-4'>
+              <div className='w-full h-full rounded-full border border-red-500/20 p-4'></div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
+      <div className='absolute bottom-1/4 left-1/2 w-4 h-4 bg-red-500 rounded-full opacity-50'></div>
+      <div className='absolute bottom-8 right-8 z-20'>
+        <button className='w-12 h-12 rounded-full bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-slate-400 dark:hover:bg-slate-600 transition-colors'>
+          <span className='material-symbols-outlined'>arrow_upward</span>
+        </button>
+      </div>
+      <div className='relative z-10'>
+        <header className='py-6 px-4 sm:px-6 lg:px-8'>
+          <div className='max-w-7xl mx-auto flex justify-between items-center'>
+            <div className='flex items-center space-x-2'>
+              <span className='font-extrabold text-2xl text-slate-900 dark:text-white'>
+                orient
+              </span>
+              <div className='w-4 h-4 bg-red-500 rounded-full'></div>
+            </div>
+            <nav className='hidden lg:flex items-center space-x-8'>
+              <a
+                className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'
+                href='#'
+              >
+                <span>Services</span>
+                <span className='material-symbols-outlined text-base'>
+                  expand_more
+                </span>
+              </a>
+              <a
+                className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'
+                href='#'
+              >
+                <span>Company</span>
+                <span className='material-symbols-outlined text-base'>
+                  expand_more
+                </span>
+              </a>
+              <div className='relative group'>
+                <button className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
+                  <span>Careers</span>
+                  <span className='material-symbols-outlined text-base'>
+                    expand_more
+                  </span>
+                </button>
+                <div className='absolute top-full w-56 left-1/2 -translate-x-1/2 mt-2 bg-white dark:bg-slate-800 hidden group-hover:block z-20'>
+                  <div className='py-1'>
+                    <a
+                      className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
+                      href='#'
+                    >
+                      Job Openings
+                    </a>
+                    <a
+                      className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
+                      href='#'
+                    >
+                      Life at Orient Software
+                    </a>
+                    <a
+                      className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
+                      href='#'
+                    >
+                      Internship Programs
+                    </a>
+                    <a
+                      className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
+                      href='#'
+                    >
+                      Referral Program
+                    </a>
+                    <a
+                      className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
+                      href='#'
+                    >
+                      Career Development
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a
+                className='text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'
+                href='#'
+              >
+                Blog
+              </a>
+            </nav>
+            <div className='hidden lg:flex items-center space-x-6'>
+              <a
+                className='bg-red-500 text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity'
+                href='#'
+              >
+                Get in touch
+              </a>
+              <div className='flex items-center space-x-3 text-sm'>
+                <a className='font-bold text-red-500' href='#'>
+                  ENG
+                </a>
+                <span className='text-slate-300 dark:text-slate-600'>|</span>
+                <a
+                  className='text-slate-500 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 transition-colors'
+                  href='#'
+                >
+                  日本語
+                </a>
+              </div>
+            </div>
+            <button className='lg:hidden text-slate-800 dark:text-slate-200'>
+              <span className='material-symbols-outlined'>menu</span>
+            </button>
+          </div>
+        </header>
+        <main>
+          <div className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8'>
+            <div className='max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center'>
+              <div className='text-center lg:text-left'>
+                <h1 className='text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight'>
+                  Top-Tier Software Development Company
+                </h1>
+                <p className='mt-6 text-sm font-bold tracking-widest text-red-500'>
+                  POWERED BY TALENT. DRIVEN BY PASSION
+                </p>
+                <p className='mt-8 max-w-lg mx-auto lg:mx-0 text-lg text-slate-600 dark:text-slate-400'>
+                  We deliver end-to-end software services—building world-class
+                  solutions and empowering your projects with vetted tech
+                  talent.
+                </p>
+                <div className='mt-10 flex justify-center lg:justify-start'>
+                  <a
+                    className='bg-red-500 text-white px-8 py-4 rounded-full font-bold flex items-center space-x-3 hover:opacity-90 transition-opacity'
+                    href='#'
+                  >
+                    <span>Work with Us</span>
+                    <span className='material-symbols-outlined'>
+                      arrow_forward
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div className='hidden lg:block relative h-full'>
+                <div className='relative w-full aspect-4/4 max-w-md mx-auto'>
+                  <Image
+                    alt='A professional woman smiling while working on a laptop in a modern office.'
+                    className='absolute inset-0 object-cover rounded-full z-10'
+                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuAsUroO2JUr_ZBK1S2riJ7I-dm8DhfmMLPkSbHs8Kx2wWkE5xngEoudszusi6ruQFMvei8jyEDOVvyQ1q7-nPGnywWItsQV7M-ElDxqdxcHumr3X6CosnN8MFeW1pZRmD_6ighfOvvFqFoWyhu8JS4OQr2v7U8D9MFJYy-Vgtvmpgd-bjAMCmTqE_HguXiF1nLQyY5nh1Ts1tnPqItWushhVbwiZtD9lCi-r-2TARU4FNZu5viqLZhXIJLGAqYcfT4kutRfZfa9XA'
+                    fill
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950'>
+            <div className='max-w-7xl mx-auto'>
+              <div className='text-center'>
+                <h2 className='text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white'>
+                  We are Orient Software
+                </h2>
+                <p className='mt-4 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400'>
+                  We are a leading software development company, providing
+                  high-quality solutions to businesses worldwide. Our team of
+                  experts is dedicated to delivering excellence and innovation.
+                </p>
+              </div>
+              <div className='mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
+                <div className='text-center p-6 border border-slate-200 dark:border-slate-800 rounded-lg'>
+                  <p className='text-4xl font-extrabold text-red-500'>350+</p>
+                  <p className='mt-2 text-slate-600 dark:text-slate-400'>
+                    Skilled and Motivated Tech Staff
+                  </p>
+                </div>
+                <div className='text-center p-6 border border-slate-200 dark:border-slate-800 rounded-lg'>
+                  <p className='text-4xl font-extrabold text-red-500'>8</p>
+                  <p className='mt-2 text-slate-600 dark:text-slate-400'>
+                    Branch Offices Around the World
+                  </p>
+                </div>
+                <div className='text-center p-6 border border-slate-200 dark:border-slate-800 rounded-lg'>
+                  <p className='text-4xl font-extrabold text-red-500'>200+</p>
+                  <p className='mt-2 text-slate-600 dark:text-slate-400'>
+                    Successful Projects Delivered
+                  </p>
+                </div>
+                <div className='text-center p-6 border border-slate-200 dark:border-slate-800 rounded-lg'>
+                  <p className='text-4xl font-extrabold text-red-500'>100+</p>
+                  <p className='mt-2 text-slate-600 dark:text-slate-400'>
+                    Clients Worldwide
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background-dark text-slate-200'>
+            <div className='max-w-7xl mx-auto'>
+              <div className='grid grid-cols-1 lg:grid-cols-3 gap-12 items-center'>
+                <div className='lg:col-span-1 text-center lg:text-left'>
+                  <h2 className='text-3xl sm:text-4xl font-extrabold text-white'>
+                    What We Offer
+                  </h2>
+                  <p className='mt-4 text-lg text-slate-400'>
+                    Empower your projects with our vetted tech talent and
+                    world-class software solutions.
+                  </p>
+                  <div className='mt-8'>
+                    <a
+                      className='inline-block bg-red-500 text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-opacity'
+                      href='#'
+                    >
+                      Upgrade your team now
+                    </a>
+                  </div>
+                </div>
+                <div className='lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8'>
+                  <div className='group relative overflow-hidden rounded-lg'>
+                    <Image
+                      alt='A team collaborating on a project.'
+                      className='w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-300'
+                      src='https://lh3.googleusercontent.com/aida-public/AB6AXuBBpfuq8Sy8dbOqVhJjie0fDlgGqr2ckcqcO7pIDCmXsLnrGOfahHgYOvDoMT3nDQEAJ9i8aEPQBvqCVrPMyJfCs7LYrXQw6K0mAfoncnde8hs_8ym_1d9gGhyMF-kougPAk3QPK51xhgQ3XSsSWCgD51-Yr222cCCwMLs-NJJUudsCvxrt0fvtMf_TTitlipF_jHckStG6pZb4WDRQxW50SOkwfuezVC-juj42N8tkw3F_2NzbAX0Pl6PVJCkf1UYr05avzVvX0w'
+                      width={402}
+                      height={320}
+                    />
+                    <div className='absolute inset-0 bg-linear-to-t from-black/70 to-transparent'></div>
+                    <div className='absolute bottom-0 left-0 p-6'>
+                      <h3 className='text-2xl font-bold text-white'>
+                        Delivery Team
+                      </h3>
+                      <a
+                        className='inline-flex items-center text-white mt-2 group-hover:text-red-500 transition-colors'
+                        href='#'
+                      >
+                        <span className='material-symbols-outlined bg-white text-black rounded-full p-1 text-base group-hover:bg-red-500 group-hover:text-white transition-colors'>
+                          arrow_forward
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <div className='group relative overflow-hidden rounded-lg'>
+                    <Image
+                      alt='A software developer focused on coding.'
+                      className='w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-300'
+                      src='https://lh3.googleusercontent.com/aida-public/AB6AXuBwlaaAetmjC2b_UlrVqoHzpNvgjcCA6kfEdmKUQsbw29MnJ2HZK53WF3xtbMKVG3aVour6ncVBHkqv57_3T09KtKDQgSNOt4TiBmGrXj7VMXneIihjBlYcNIxfaJrSFn4paBOmzdjxfmLbiQzSt9QCeB78VVx7CqQ8Z6cE4e2hIpIE_DrPNzi6ZoF9tZGBmnkdXPo-9Dw2k8DZ1pLdZ8MUUFvzc5DlPRBHAqy4LvzzQ_vtUJgwNyA6y4uuxhQopcw0o-137tqbYw'
+                      width={402}
+                      height={320}
+                    />
+                    <div className='absolute inset-0 bg-linear-to-t from-black/70 to-transparent'></div>
+                    <div className='absolute bottom-0 left-0 p-6'>
+                      <h3 className='text-2xl font-bold text-white'>
+                        Extended Team
+                      </h3>
+                      <a
+                        className='inline-flex items-center text-white mt-2 group-hover:text-red-500 transition-colors'
+                        href='#'
+                      >
+                        <span className='material-symbols-outlined bg-white text-black rounded-full p-1 text-base group-hover:bg-red-500 group-hover:text-white transition-colors'>
+                          arrow_forward
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8'>
+            <div className='max-w-7xl mx-auto text-center'>
+              <h2 className='text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white'>
+                What We Do
+              </h2>
+              <p className='mt-4 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400'>
+                We offer a full spectrum of software services to bring your
+                vision to life.
+              </p>
+              <div className='mt-8'>
+                <a
+                  className='inline-block bg-red-500 text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-opacity'
+                  href='#'
+                >
+                  Connect with our expert
+                </a>
+              </div>
+              <div className='mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left'>
+                <div className='bg-white dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800'>
+                  <span className='material-symbols-outlined text-4xl text-red-500'>
+                    code_blocks
+                  </span>
+                  <h3 className='mt-4 text-xl font-bold text-slate-900 dark:text-white'>
+                    Custom Software Development
+                  </h3>
+                  <p className='mt-2 text-slate-600 dark:text-slate-400'>
+                    Tailored solutions to meet your specific business needs.
+                  </p>
+                </div>
+                <div className='bg-white dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800'>
+                  <span className='material-symbols-outlined text-4xl text-red-500'>
+                    smart_toy
+                  </span>
+                  <h3 className='mt-4 text-xl font-bold text-slate-900 dark:text-white'>
+                    AI Development
+                  </h3>
+                  <p className='mt-2 text-slate-600 dark:text-slate-400'>
+                    Leverage the power of artificial intelligence for your
+                    business.
+                  </p>
+                </div>
+                <div className='bg-white dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800'>
+                  <span className='material-symbols-outlined text-4xl text-red-500'>
+                    task_alt
+                  </span>
+                  <h3 className='mt-4 text-xl font-bold text-slate-900 dark:text-white'>
+                    QA and Testing
+                  </h3>
+                  <p className='mt-2 text-slate-600 dark:text-slate-400'>
+                    Ensuring your software is reliable, secure, and
+                    user-friendly.
+                  </p>
+                </div>
+                <div className='bg-white dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800'>
+                  <span className='material-symbols-outlined text-4xl text-red-500'>
+                    design_services
+                  </span>
+                  <h3 className='mt-4 text-xl font-bold text-slate-900 dark:text-white'>
+                    UX/UI Design
+                  </h3>
+                  <p className='mt-2 text-slate-600 dark:text-slate-400'>
+                    Creating intuitive and engaging user experiences.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950'>
+            <div className='max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
+              <div>
+                <h2 className='text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white'>
+                  Why Choose Us
+                </h2>
+                <p className='mt-4 text-lg text-slate-600 dark:text-slate-400'>
+                  We are more than just a software company. We are your
+                  technology partner, committed to your success. Our proven
+                  track record, elite talent, and client-centric approach set us
+                  apart.
+                </p>
+                <div className='mt-8'>
+                  <a
+                    className='inline-block bg-red-500 text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-opacity'
+                    href='#'
+                  >
+                    Get Started Now
+                  </a>
+                </div>
+              </div>
+              <div className='space-y-6'>
+                <div className='flex items-start'>
+                  <div className='shrink-0 text-red-500 font-extrabold text-2xl mr-4'>
+                    01
+                  </div>
+                  <p className='text-slate-600 dark:text-slate-300'>
+                    <strong className='text-slate-800 dark:text-white'>
+                      96% Satisfaction and 95% Repeat Business
+                    </strong>
+                  </p>
+                </div>
+                <div className='flex items-start'>
+                  <div className='shrink-0 text-red-500 font-extrabold text-2xl mr-4'>
+                    02
+                  </div>
+                  <p className='text-slate-600 dark:text-slate-300'>
+                    <strong className='text-slate-800 dark:text-white'>
+                      A History of Over 20 Years in the Tech Industry
+                    </strong>
+                  </p>
+                </div>
+                <div className='flex items-start'>
+                  <div className='shrink-0 text-red-500 font-extrabold text-2xl mr-4'>
+                    03
+                  </div>
+                  <p className='text-slate-600 dark:text-slate-300'>
+                    <strong className='text-slate-800 dark:text-white'>
+                      A Full Spectrum of Services &amp; Solutions
+                    </strong>
+                  </p>
+                </div>
+                <div className='flex items-start'>
+                  <div className='shrink-0 text-red-500 font-extrabold text-2xl mr-4'>
+                    04
+                  </div>
+                  <p className='text-slate-600 dark:text-slate-300'>
+                    <strong className='text-slate-800 dark:text-white'>
+                      Transparent &amp; Time-Tested Development Processes
+                    </strong>
+                  </p>
+                </div>
+                <div className='flex items-start'>
+                  <div className='shrink-0 text-red-500 font-extrabold text-2xl mr-4'>
+                    05
+                  </div>
+                  <p className='text-slate-600 dark:text-slate-300'>
+                    <strong className='text-slate-800 dark:text-white'>
+                      Over 350 Elite Talent
+                    </strong>
+                  </p>
+                </div>
+                <div className='flex items-start'>
+                  <div className='shrink-0 text-red-500 font-extrabold text-2xl mr-4'>
+                    06
+                  </div>
+                  <p className='text-slate-600 dark:text-slate-300'>
+                    <strong className='text-slate-800 dark:text-white'>
+                      ISO-9001 and ISO-27001 Certified Company
+                    </strong>
+                  </p>
+                </div>
+                <div className='flex items-start'>
+                  <div className='shrink-0 text-red-500 font-extrabold text-2xl mr-4'>
+                    07
+                  </div>
+                  <p className='text-slate-600 dark:text-slate-300'>
+                    <strong className='text-slate-800 dark:text-white'>
+                      Seamless Communication and Collaboration with Clients
+                    </strong>
+                  </p>
+                </div>
+                <div className='flex items-start'>
+                  <div className='shrink-0 text-red-500 font-extrabold text-2xl mr-4'>
+                    08
+                  </div>
+                  <p className='text-slate-600 dark:text-slate-300'>
+                    <strong className='text-slate-800 dark:text-white'>
+                      Commitment to Quality &amp; Result-Oriented Approach
+                    </strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background-dark text-slate-200'>
+            <div className='max-w-7xl mx-auto text-center'>
+              <h2 className='text-3xl sm:text-4xl font-extrabold text-white'>
+                Excellence Through Certification
+              </h2>
+              <p className='mt-4 max-w-3xl mx-auto text-lg text-slate-400'>
+                Our certifications and partnerships reflect our commitment to
+                quality, security, and continuous improvement, ensuring we
+                deliver the best solutions for our clients.
+              </p>
+              <div className='mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
+                <div className='bg-slate-800 p-6 rounded-lg'>
+                  <h3 className='font-bold text-white text-lg'>
+                    Microsoft Partner Designations
+                  </h3>
+                </div>
+                <div className='bg-slate-800 p-6 rounded-lg'>
+                  <h3 className='font-bold text-white text-lg'>
+                    Cloud &amp; DevOps Certifications
+                  </h3>
+                </div>
+                <div className='bg-slate-800 p-6 rounded-lg'>
+                  <h3 className='font-bold text-white text-lg'>
+                    Project Management &amp; Agile
+                  </h3>
+                </div>
+                <div className='bg-slate-800 p-6 rounded-lg'>
+                  <h3 className='font-bold text-white text-lg'>
+                    Quality Assurance &amp; Compliance
+                  </h3>
+                </div>
+              </div>
+              <div className='mt-12'>
+                <a
+                  className='inline-block bg-red-500 text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-opacity'
+                  href='#'
+                >
+                  See projects we have done
+                </a>
+              </div>
+            </div>
+          </section>
+          <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden'>
+            <div className='max-w-7xl mx-auto'>
+              <div className='text-center'>
+                <h2 className='text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white'>
+                  What Our Clients Say
+                </h2>
+                <p className='mt-4 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400'>
+                  Our clients&apos; success stories are the best testament to
+                  our work.
+                </p>
+              </div>
+              <div className='mt-12 relative'>
+                <div className='flex overflow-x-auto snap-x snap-mandatory scrollbar-hide space-x-8 pb-4'>
+                  <div className='carousel-item shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center'>
+                    <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                      <p className='text-slate-600 dark:text-slate-400 grow'>
+                        &quot;Orient Software delivered a robust and scalable
+                        solution that exceeded our expectations. Their team was
+                        professional, responsive, and a pleasure to work
+                        with.&quot;
+                      </p>
+                      <div className='mt-6 flex items-center'>
+                        <Image
+                          alt='Client photo'
+                          className='rounded-full'
+                          src='https://lh3.googleusercontent.com/aida-public/AB6AXuBaYGYF5MQMMGSk66ss6-_D8qaIxpH7ayJ-FRBWLBjiWsa5j2XAap8dNvZAnS01yd_kV4CzjIKjkaNf3ZS50m_IEryb0F8RStylX5ydr1a7r1ohBjRATjdzHNQnG5dI6BIaSZ4CU6Cj4EMYH0amc9q55mEkev0Y_mkdziO63GOYMyakQuL0PMMO4qcOMD_mhN-yc5nsqQYFPqY5TEQ8Oc74chuviHIWYfZWlreMpwe5oRBJIszsv8uLbh_MoKJzZfOCI6b3LZ_-VQ'
+                          width={48}
+                          height={48}
+                        />
+                        <div className='ml-4'>
+                          <p className='font-bold text-slate-900 dark:text-white'>
+                            Jane Doe
+                          </p>
+                          <p className='text-sm text-slate-500 dark:text-slate-400'>
+                            CEO, Tech Innovators
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='carousel-item shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center'>
+                    <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                      <p className='text-slate-600 dark:text-slate-400 grow'>
+                        &quot;The extended team from Orient seamlessly
+                        integrated with our in-house developers. Their expertise
+                        in AI development was crucial for our project&apos;s
+                        success.&quot;
+                      </p>
+                      <div className='mt-6 flex items-center'>
+                        <Image
+                          alt='Client photo'
+                          className='rounded-full'
+                          src='https://lh3.googleusercontent.com/aida-public/AB6AXuD5ajN72f4ct8MLMYYaIEsCitBkGwV-E2ekEMkycZWNYOsiK6Zl3kP9Ch2y93PR8nMPkANNXGBQucpQFa2ZH4q7I0-HzgNY6UtZLis34a5yjQ3rkwDrPrO0os3zHtlNxKY2zYxoDZpPobwefbjK2ytdgPDZEZYv8cpNnRtsgCrsg_iiOtwPBdBzc0ZNHyi-2jRcdmNk1eX7CByCEaKdxsZk7KwNHcec7oxp53XeF2SpKCNLiZrlZfnLhm_K48nwdYkktDbsM694PA'
+                          width={48}
+                          height={48}
+                        />
+                        <div className='ml-4'>
+                          <p className='font-bold text-slate-900 dark:text-white'>
+                            John Smith
+                          </p>
+                          <p className='text-sm text-slate-500 dark:text-slate-400'>
+                            CTO, Future Solutions
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='carousel-item shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center'>
+                    <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                      <p className='text-slate-600 dark:text-slate-400 grow'>
+                        &quot;Their commitment to quality and their transparent
+                        process made the entire development cycle smooth. We
+                        highly recommend Orient Software for any complex
+                        software needs.&quot;
+                      </p>
+                      <div className='mt-6 flex items-center'>
+                        <Image
+                          alt='Client photo'
+                          className='rounded-full'
+                          src='https://lh3.googleusercontent.com/aida-public/AB6AXuAsUroO2JUr_ZBK1S2riJ7I-dm8DhfmMLPkSbHs8Kx2wWkE5xngEoudszusi6ruQFMvei8jyEDOVvyQ1q7-nPGnywWItsQV7M-ElDxqdxcHumr3X6CosnN8MFeW1pZRmD_6ighfOvvFqFoWyhu8JS4OQr2v7U8D9MFJYy-Vgtvmpgd-bjAMCmTqE_HguXiF1nLQyY5nh1Ts1tnPqItWushhVbwiZtD9lCi-r-2TARU4FNZu5viqLZhXIJLGAqYcfT4kutRfZfa9XA'
+                          width={48}
+                          height={48}
+                        />
+                        <div className='ml-4'>
+                          <p className='font-bold text-slate-900 dark:text-white'>
+                            Emily Johnson
+                          </p>
+                          <p className='text-sm text-slate-500 dark:text-slate-400'>
+                            Product Manager, Digital Ventures
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className='mt-8 flex justify-center space-x-3'>
+                  <button className='w-3 h-3 bg-slate-300 dark:bg-slate-700 rounded-full'></button>
+                  <button className='w-3 h-3 bg-red-500 rounded-full'></button>
+                  <button className='w-3 h-3 bg-slate-300 dark:bg-slate-700 rounded-full'></button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950'>
+            <div className='max-w-7xl mx-auto'>
+              <div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8 items-center'>
+                <Image
+                  alt='Conexus logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuAbZP4MQQFFAzdbswTgUQyRGfPn0-6awYmdRODiUZcjtn5RrcXrfrkbpX3yGV7wdJRDPEOdQlsb3nkeWGMvuwODbRDuGB6GVpEWHo6747QwbOAbNtf0PtNjgbSJ_nDmqaPsZjERxPx4vRes3j_XwgIWeZibX9X4eSKXQuS3ZOkfrfT9s8eM9LO2Qv29CSuw6cH8m-9Cy2-P2Xg7VLk620rYLb84dOtOAzMLlvJH22TqQqLcmct4MS-xbqXt-qgyZGcngDocnTX_2Q'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Netwealth logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuBq4GymsCCu1M1EJtPtCI38CW4EOkJW0qA94cdw3-TL5tSqqS2pgipnc7XYSl5gNQdKHcugwxagUciplfwicwKaPptMFl0nGayNEiEKUk4OPiH4ftmzbGm8ixCqv1HJo8mgnfYbSyDsjbZrBQBTA_WaXdFCyCwnIuVcPPw-psbqr5knfoLCAdmhFPMsti831tQJ0NaiNSk4Ukc6HNecWqS-9-JtoDz58Nfqy5kjk1COyFUHRxsLtTdIBAwwbVLTRuUwcPBrEgoThw'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Dekra logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuAbsW49P-g77B3c5Cgr8K931FDQ7Oy8aUDF515h39Pmnlv9TR2_P09La44avEg8Jcr-PfKNFIXdHsf19qhLigvaM-iP2Jct7KSgusK5tJRQ2P_YEeulMUbNvvR07fZGjvYCwOqwlBzJFg9lNURQZUdR_1-KImST4T9IxSyPj58Uv3tqF6ZFfw4m0gF_KqOmbUg8tshXROllv3pYuh5dapEeokfrTIdG6n0Px2Twfu-z1m6Q_9_ED2SW-V9BssWiytpznFVO3jQ_pw'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Wotif logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuCv_B9N-3mzeQzMPN4Qfn5GLpUDgFfTFW7HbJXZNeXepBxOkud0hkyLg4wtZWUij64hwvP5JLRPwBcIq_KrcHCBo2UqSCTAvQcWwvmmnUgTQH7m63B4hbbu5_qq6tja9ZeCZ6yrwiCxT-Szp1Yx5S0mDC8WTy2BLW_I-ssa5vah4h22OJZakZn3nzFIq-WBSuCpciG8mp9J0WL18QflYUAdl8sxr563j30fIn_VlP-VRGBNV3RKrpnstvmcA5Cph7TLEX9bq_okLw'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Espos logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuAwpY4pzOX3d0Es14HW3Jc45eXpiir8T5Gs6E4-jk_Aop17YoQsSYgNJc_6HLHIwkn7loNDgxhZXbyKZ2Ny7tDZhoqzawTAR4DRVa-oaW820jrSIzMpEo9fCBM40TEHpJ_7QXZrSPcm7T_NatkbnOCmCriGT2ACPnygG8tVCuTRjB0YKprajUnrJjqi2Jt-SUe-XaAtBxTJejb47gG7ej9TTk65UMOF63n-VKqjb9aXlZIV9p2flQHiSPWKxHeJGZWsTuW911DYiQ'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Kikora logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuCesFZSzwqNpypzgYxKZYVwJhiKLCrCg56ACmAhL8TC3lVQkoYDEmI_fFCxtVzUUH55t2V-LZnFqh-4gbBrC_NJcDBhERx8L6H61HREbC8wZciXHLe1OgwGuiPxRGRhgseyacdY61h97y0EsPleM2cKe4SvHrzasIgTAVsdpCNRwsGLbtG8eZ9A_iRm-iLElWD3c9QPDg82sBnefjIKn8kKHdyMx9I5nwbolIY9GWSJ5PSdJiJaB6opVzFIRiCov1FXv80AiY9vWg'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Penetrac logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuCnyhcsTcZSCo7tpmP_gLcee72gIvxMTE4uJMI6puFeHCCVnxLXVtdDLkWnWzDpQiYXpLrzRrn-hH175GYPq5PhdXth69fjopTYWEkmPTCJxsQI9GZxTguBI3JoZxu9bB2CqhlxuvmdDlAKUQa5RJbfS-QHiCLe_N1gnZHgALYCsjPBPB3cU0UtjjUFirgbl-6akB429hTn7qDmGPQoUbf_pWfZY5cVqOXFgIs0sua57pftoGLR6kojh2vnrrm9pUwJOij0GRBbGw'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='OPEN4 logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuC2o5NWSyM4V7ewHno-QVw8Osc1MjjUabbb223T9QZstH0HqZ9fZbMOKjm1Fm9F-i8w5dIMz6yzBhnRQbBkslmDA-YpAPgYvCOAcJYw1RtgM4AQ4WE87f6jPiBX3t42G9Ytnb1QF1QDKdGXABcobvPL4xWPvxmq6vvlxV67W3hYdKzuX-fulNO7PBryx7zo4BPYQFb1hQWrmAvR0GgkIkRGZeOuCe568Vd5eZadHLiTY44nb3_1l2zVNq_RjgSP99Fze0615zLYOA'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='InCloud logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuA_s_rlaIkZdFU8RBFRPkmoISWFulYD2KLn-BMEOFvv4M4tu-K8CYywfcXXxUlM4JEAlD_JwtCYTPLSgHl2Ken-19rRazm7RUEE4SZ3nYdkMfbCGW_splkLbZcKhmpASeSiRO-nq1QuxjHFzuoNaNCAkpYV381PGIFhSpRO3wFhlJDLjA7mMIXv1w04e763lQD8XffZd7v5EMm05FK2MwuQz2mI4KNRbTg4EP7VSp66n-Zrrs7tGAYtBw9G6w7Yc0jxzGTxKr60MA'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Xeppo logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuDmXWYfeydn3cC1Em608kWhUxKc78bMYrt6KJ6B3RNOYrxZAFzD-k9bLPDM2KjxiJFnc__9KP0_khwWT1NQsHzAXqxC7iVzZF9qhs2dCFno0QKrZtqT_zhroLZfMwlV5j6vE9U1idLfxNUy7nb4RmPe2fcTiduP3j2NiIML6jue7G0F6eSlJJRAwbCNvBwKSLk_b83ys8sAscHtXzO3Ufe3IQisBvbJG-NR2UUDVZHStno0-l2_oAIbquDRrh4PqPuBXUgP3Sl4Yw'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Rencore logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuDtsF6QlhXUkFV77zHi0pjB8tiYc74oW123vZ-tvMc-lMcgGym450Dejbnh_cDNC3xR7Vz4y6BL7isIJoSacZdXQpR9r8uHj2EP_dF9wBKoRHFyjVBINpCcQUPANu0IT5KhEocCYXbyZL9DTIwfINhpETgTWahDjlFaVOgIC6KdwO98SJlu5rgIN3tvQ74OiMLqLsXJUbMJyltP7Ei5f_J-H9-wu18iEOpS92Ca5UwgcK62ZtVdDEgdvrlQ5mSLUc0OwCEIHtj0mQ'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='PumpTap logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuBbC3iadAv00NX6IhfskkVgtHfw3ZWo_XZ44jbY_v3oSGulU-txdtpWA-5yti_ULrAL20_D_jTKnRMTefk93GrLSOadAXv1CewtA2t0fDmzlSaUpVwxYNBDBzHWp10ee-q9Y-u5DbIW-qexQFnrEz1k7NYLMpUZCrAPzdelfGlnpAy4FY7-zWev6Nws5TNTfLEGyKJEEIots6SzV1MuFA1MFxqF0TEhzHMxOCi1WMMTTXscG5XcImj19ezWwbuqKJkQFq4WLcVlUg'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Indigo logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuA00U8KA1xylj1aVOZ6Odjk7SCnt6jbCIpN14clm8EKZboQFgo1DO6eAn-kflpcHXZQMTbXtbbdbnWBNMaJ7ieAmNKFQSMrRIE5tw4Bg8jn_9PrEyXD3oHbbDSG5xxPvweDFEicOzdZ19fZCj4B-1aFvZ3WCt5jyDhYm5tgsAHD5r2xs-FGHrjIOsW-eS4fbGhIV5_3mT8dy5bEO0XYahfBpZUUfPSMmsb-93LBryIh_Dy8LAWNPSshX02KI3C_UzT11h6wh4GEfg'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Plenti logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuCxKWWQ-_F8_ryY6GcSw2r1pl2hboKdxutM4nvbg1VZNr8Rvss4lK1cm1ABuaJ9jWaQjOPn84ovo4cMSh1QlVuIrIeWX0_FdYVzoPMLsbpp_U9dGyJ39-KnSq8aGRN6ws5r93nlTblA4wF8fgb37b9TyL_5Ubf3AP4MyOheRuTLv8-Q4BhOyk9QFE2bCc20E4O8l5tsUWeu5PR-FL0H0KYKCLuAGTKd4-Fl0lbNMmxrnUPPBIKB3S9NvIvnBt9q6xF6MMgcLYhRIA'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Vtnz logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuB5KrtJ7bX-yslYl2piSMOlvTi8EmrfA3I_rW2T-yDxiU6ZI1SdxwWrZBDLn-Tph4KYNkr2LaA3AuCpeo9LRaU9hDOo0WIu53ijBI7rskrBFpKvf0n0SUjFV5Qljpuo--qb7SwW04BpckWJqYsOPHrxOhfWzcmVwiiH3MwCMPLievS6K6d5chRzUTYAcKBKbaAfYeraApC13GqW0L1uxnPtz3TnLszfYvwzn77LHuhxTEfQkns6aMen9liUFrJjUgU2GTBtkCAbRw'
+                  width={160}
+                  height={160}
+                />
+                <Image
+                  alt='Excosoft logo'
+                  className='mx-auto'
+                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuBx_p1ysn0FXfLeyRDmQa1P63b7blVRaV-7pr_yRg1lU-1TiI_bMKkijF30MWl21ieW1AtHpfiK8WZJM-1Ag_tgZ_Z8B5L6gU6C_uEL36UXc0DzJRVjKQjtJzowZ2Zen6pqqfrMTZ2Ws9DNxnQ-WeaoRfT0565mE4Xb1dRDutI2ybuglRCmSMxYrM5TYzfZburmyaotiBVmq7_1zHl9KImQYjd9PriI6qUM78yIbULBcOJRCLBFKmxdDBWT74wzhX-CgEBz36rAbA'
+                  width={160}
+                  height={160}
+                />
+              </div>
+            </div>
+          </section>
+          <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8'>
+            <div className='max-w-7xl mx-auto text-center'>
+              <h2 className='text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white'>
+                Start Your Project with Orient Software Today
+              </h2>
+              <p className='mt-4 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400'>
+                We make the process simple and transparent, ensuring a smooth
+                journey from idea to launch. Let&apos;s build something great
+                together.
+              </p>
+              <div className='mt-8'>
+                <a
+                  className='inline-block bg-red-500 text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-opacity'
+                  href='#'
+                >
+                  Schedule a Meeting
+                </a>
+              </div>
+              <div className='mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-left'>
+                <div className='flex flex-col md:flex-row items-start md:items-center'>
+                  <div className='flex items-center'>
+                    <div className='shrink-0 w-12 h-12 rounded-full bg-red-500/10 dark:bg-red-500/20 text-red-500 flex items-center justify-center'>
+                      <span className='material-symbols-outlined'>call</span>
+                    </div>
+                    <div className='ml-4'>
+                      <p className='font-bold text-slate-900 dark:text-white'>
+                        01. Schedule a Consultation Call
+                      </p>
+                    </div>
+                  </div>
+                  <span className='material-symbols-outlined text-4xl text-slate-300 dark:text-slate-600 mx-auto mt-4 md:mt-0 md:ml-4 rotate-90 md:rotate-0'>
+                    arrow_forward
+                  </span>
+                </div>
+                <div className='flex flex-col md:flex-row items-start md:items-center'>
+                  <div className='flex items-center'>
+                    <div className='shrink-0 w-12 h-12 rounded-full bg-red-500/10 dark:bg-red-500/20 text-red-500 flex items-center justify-center'>
+                      <span className='material-symbols-outlined'>group</span>
+                    </div>
+                    <div className='ml-4'>
+                      <p className='font-bold text-slate-900 dark:text-white'>
+                        02. Explore Solutions and Team Setup
+                      </p>
+                    </div>
+                  </div>
+                  <span className='material-symbols-outlined text-4xl text-slate-300 dark:text-slate-600 mx-auto mt-4 md:mt-0 md:ml-4 rotate-90 md:rotate-0'>
+                    arrow_forward
+                  </span>
+                </div>
+                <div className='flex flex-col md:flex-row items-start md:items-center'>
+                  <div className='flex items-center'>
+                    <div className='shrink-0 w-12 h-12 rounded-full bg-red-500/10 dark:bg-red-500/20 text-red-500 flex items-center justify-center'>
+                      <span className='material-symbols-outlined'>
+                        rocket_launch
+                      </span>
+                    </div>
+                    <div className='ml-4'>
+                      <p className='font-bold text-slate-900 dark:text-white'>
+                        03. Kick Off and Monitor the Project
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950'>
+            <div className='max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center'>
+              <div className='text-white bg-background-dark p-8 sm:p-12 rounded-lg'>
+                <h2 className='text-3xl sm:text-4xl font-extrabold'>
+                  Let&apos;s Get to Work
+                </h2>
+                <p className='mt-4 text-slate-400'>
+                  Contact us to discuss your project. We&apos;re ready to help
+                  you achieve your business goals with our cutting-edge software
+                  solutions.
+                </p>
+                <div className='mt-10 space-y-6'>
+                  <div className='flex items-center'>
+                    <div className='text-4xl font-extrabold text-red-500'>
+                      20
+                    </div>
+                    <p className='ml-4 text-slate-300'>years in operation</p>
+                  </div>
+                  <div className='flex items-center'>
+                    <div className='text-4xl font-extrabold text-red-500'>
+                      100
+                    </div>
+                    <p className='ml-4 text-slate-300'>Global clients</p>
+                  </div>
+                  <div className='flex items-center'>
+                    <div className='text-4xl font-extrabold text-red-500 flex items-center'>
+                      <Image
+                        alt='Microsoft logo'
+                        className='mr-2'
+                        src='https://lh3.googleusercontent.com/aida-public/AB6AXuDx_5Y8Nl5af2KSVvZZzPg_F9C4xRQIdBkGc0JWJg77dP0QuF0ipRHGf_kx5tpGE-vTlRQWinwuYOrd1rJ55YauVeC_NqMRHSmYZrNJCkWKivZnqrHpTtKIGZ0scU_aJhiiF8tBuFZ2o-wUDItzLHk9iGDlEnA6hWTG_V-gFQRfLjAO6mqhpSeVcnzdlegaw0U6fdG9bX4yyvtVGOg6W1q8M2URWQ8YHJtq4rIogtZY9AQoNkpAOIsk5QzUTJq12h0gEysIALL02Q'
+                        width={60}
+                        height={60}
+                      />
+                    </div>
+                    <p className='ml-4 text-slate-300'>
+                      Microsoft Solutions Partner
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <form className='space-y-6'>
+                  <div>
+                    <label className='sr-only' htmlFor='full-name'>
+                      Full Name
+                    </label>
+                    <input
+                      className='w-full bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-md py-3 px-4 text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500'
+                      id='full-name'
+                      name='full-name'
+                      placeholder='Full Name'
+                      type='text'
+                    />
+                  </div>
+                  <div>
+                    <label className='sr-only' htmlFor='email'>
+                      Email
+                    </label>
+                    <input
+                      className='w-full bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-md py-3 px-4 text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500'
+                      id='email'
+                      name='email'
+                      placeholder='Email'
+                      type='email'
+                    />
+                  </div>
+                  <div>
+                    <label className='sr-only' htmlFor='company'>
+                      Company
+                    </label>
+                    <input
+                      className='w-full bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-md py-3 px-4 text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500'
+                      id='company'
+                      name='company'
+                      placeholder='Company'
+                      type='text'
+                    />
+                  </div>
+                  <div>
+                    <label className='sr-only' htmlFor='project-details'>
+                      Tell us about your project
+                    </label>
+                    <textarea
+                      className='w-full bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-md py-3 px-4 text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500'
+                      id='project-details'
+                      name='project-details'
+                      placeholder='Tell us about your project'
+                      rows={4}
+                    ></textarea>
+                  </div>
+                  <div className='bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md p-4 flex justify-between items-center'>
+                    <div className='flex items-center'>
+                      <input
+                        className='h-6 w-6 rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900'
+                        id='recaptcha'
+                        name='recaptcha'
+                        type='checkbox'
+                      />
+                      <label
+                        className='ml-3 text-sm text-slate-600 dark:text-slate-400'
+                        htmlFor='recaptcha'
+                      >
+                        I&apos;m not a robot
+                      </label>
+                    </div>
+                  </div>
+                  <p className='text-xs text-slate-500 dark:text-slate-400'>
+                    This site is protected by reCAPTCHA and the Google Privacy
+                    Policy and Terms of Service apply.
+                  </p>
+                  <div>
+                    <button
+                      className='w-full bg-red-500 text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-opacity'
+                      type='submit'
+                    >
+                      Send
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+          <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background-light'>
+            <div className='max-w-7xl mx-auto'>
+              <div className='flex justify-between items-center mb-12'>
+                <h2 className='text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white'>
+                  Blogs
+                </h2>
+                <a
+                  className='text-red-500 font-semibold hover:underline'
+                  href='#'
+                >
+                  Read more
+                </a>
+              </div>
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+                <div className='bg-white dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800'>
+                  <Image
+                    alt='Abstract image representing AI and mobile apps'
+                    className='w-full h-48 object-cover'
+                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuBidoV3aBT22b_Sn_Nlt59Sdvvo6hDagsGyQ0yqeIjrjwwfKMKXAq0PCvKEY18XO5WxkCDtho05c7xBgdw62yueaZHH6AuqAUy56c2sSr8XVIKR8P9U0QuXr3EXVkLAsIwoqWEQgu5ziMGtfY7DTj1VsQUabmG58_U4wb3_lKdWHrTyPrflcM75uVI1zum2E9qrnL5pOftOTGuQB9CGfHGuznpFgSRw1C148JxG6ITKhyTRcAFVpfVY9y8vyQCsmyYkpVMj-2YYKA'
+                    width={404}
+                    height={192}
+                  />
+                  <div className='p-6'>
+                    <h3 className='text-xl font-bold text-slate-900 dark:text-white'>
+                      The Future of Mobile Apps in the AI-First Era: Trends You
+                      Cannot Ignore
+                    </h3>
+                    <p className='mt-4 text-sm text-slate-500 dark:text-slate-400'>
+                      10/11/2025
+                    </p>
+                  </div>
+                </div>
+                <div className='bg-white dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800'>
+                  <Image
+                    alt='Image showing data analytics dashboard'
+                    className='w-full h-48 object-cover'
+                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuDZMTyMlT4P7h6TD_pYhC1ikc4eWHzzLxSFhO9zc1rVID2P4dB6YNqN1qnutRgNCXGCHsryttGGH41HxJIOOObXMgZPu2RX3Kw6OoRNM7DQvq72eCnioE8cP4svTa8JaDZcHKoaVnqyJODDJdPODodS3NnDZXMfFxZ7HLSfH-puWGi7_NZRdZ7VRawEKyHdjtMlRyaU006tWZ1u3sJqGRQgYNiAx1pFYWez-27yzCw9QMiwSGi-YHuJCJmBrnWYKW9QoK2a6vYSxQ'
+                    width={404}
+                    height={192}
+                  />
+                  <div className='p-6'>
+                    <h3 className='text-xl font-bold text-slate-900 dark:text-white'>
+                      Data-Driven Decision Making: How to Leverage Big Data for
+                      Business Growth
+                    </h3>
+                    <p className='mt-4 text-sm text-slate-500 dark:text-slate-400'>
+                      05/11/2025
+                    </p>
+                  </div>
+                </div>
+                <div className='bg-white dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800'>
+                  <Image
+                    alt='Cyber security concept image'
+                    className='w-full h-48 object-cover'
+                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuBJfFyFiwF9IjA2VBoKqxhVMhZRkR3SOiYjk7LV3W-E-IHkrIU9bXdU43zkzOPCIGypb4u0Fstcx5nZm03cVwKPEjhvPhegR49m4UTB-BHhGiU0b11vCa6YvBp-u43gWBNaqeB7wo1T2PD9sQjCNBu6htXAENV_qCcMPfhzSzwHVd6aILRwnvSc9SL62fIIHoxQKUEBzhWw0rb_4bIEmCXIK0ve04KIOUPLWGA8lHsk75SZBkIJHA-8aJ8HZfsuR-Ed47rQWh-FJg'
+                    width={404}
+                    height={192}
+                  />
+                  <div className='p-6'>
+                    <h3 className='text-xl font-bold text-slate-900 dark:text-white'>
+                      Navigating the Cyber Security Landscape: A Guide for
+                      Modern Businesses
+                    </h3>
+                    <p className='mt-4 text-sm text-slate-500 dark:text-slate-400'>
+                      01/11/2025
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer className='bg-background-dark text-slate-300 pt-16 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8'>
+          <div className='max-w-7xl mx-auto'>
+            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10'>
+              <div>
+                <h3 className='font-bold text-white text-lg'>Company</h3>
+                <ul className='mt-4 space-y-3'>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Company Profile
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Management Team
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Artificial Intelligence
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Corporate Social Responsibility
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Partnership program
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      How we work
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className='font-bold text-white text-lg'>Our Services</h3>
+                <ul className='mt-4 space-y-3'>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Dedicated Software Teams
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      QA and Testing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Custom Software Development
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Offshore Development Center
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Maintenance and Support
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Staff Augmentation
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      All Services
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className='font-bold text-white text-lg'>Our Expertise</h3>
+                <ul className='mt-4 space-y-3'>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      UI/UX Design
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Web Application Development
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Mobile Application Development
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Database Development
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Internet of Things
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Cloud Computing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Software Outsourcing
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className='font-bold text-white text-lg'>Technologies</h3>
+                <ul className='mt-4 space-y-3'>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Web Technologies
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Mobile Technologies
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      AI Technologies
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Angular Development
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      .NET Development
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Java Development
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      ASP.NET vs PHP
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      iOS Development
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Android Development
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className='col-span-2 lg:col-span-1'>
+                <h3 className='font-bold text-white text-lg'>Resources</h3>
+                <ul className='mt-4 space-y-3'>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      News
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Careers
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      What is software outsourcing?
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Why Outsource to Vietnam?
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      All About Software Testing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      Everything you need to know about AI &amp; Data Science
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='hover:text-red-500 text-sm transition-colors'
+                      href='#'
+                    >
+                      FAQ about Software Outsourcing
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className='mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-start gap-8'>
+              <div className='space-y-2'>
+                <h3 className='font-bold text-white text-lg'>Contact Us</h3>
+                <p>Head office: Ho Chi Minh City, Vietnam</p>
+                <p>Phone: +84 28 3812 0101</p>
+                <p>Email: contact@orientsoftware.com</p>
+              </div>
+              <div className='space-y-6 text-center md:text-right'>
+                <div className='flex flex-wrap justify-start md:justify-end gap-4 items-center'>
+                  <Image
+                    alt='Microsoft Partner logo'
+                    width={60}
+                    height={60}
+                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuCCjWsdgXnVkbnZ3WIGIa50T4PDn9ZnerJztfgmvrzoDPxZN_DJyRyq0fA2sTkPfTE51FkOnmjNkC5gWC3k2rY4pHWclJn6n8Rs0QadyLuPwT_aE4jPZgpcy8b297jnl_awlnPdZotg-m2-eFvQJoFGtDdhOVJ4ZyowAqTB2DfdeqGolyT1m7ovTLMcbOnePMxOd0bRyRA-56UgKdAZ5TbVrPbM2kDTWVnpzUX9EgADEZaTgIk2CamqdWAri_34TtcBLOFediQ4Sg'
+                  />
+                  <Image
+                    alt='ISO certification logo'
+                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuB7gRcyJgmuMr82uSiLwRsfpjRlrMgApIAC-r3-KzS-FSGFp5hzor9rv8f5IzZh8pnawAEDHQiWQlQwHJIz7Nlx2Xyp47VGW0qESGCpBdnmf2VbgelsmWjEoaTufDhnZKlPikj713Yx2N0S_irzwGAVMU0Mst6LO8i2hFfBxveLH91Z9JCqTM8N2HpGgqfBISvleTMeV8uYddtl5qubFcHtrk4aV0lPKEfE1JAA4zKKTCt1_NFDq9YY62B1csvFuAz610_IF-umNg'
+                    width={60}
+                    height={60}
+                  />
+                  <Image
+                    alt='CMMI logo'
+                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuA36SkVGamxk1WRjaZF63krkVIecRBpUIkLQuqW0Xh_EU1zBvbrh-jpIEXGwsvQDG_7vRlH85o_2FTOSiIDK_LckQQH3rU4HYgFR_Ds8PKHS2VCeQIIU0hWKBx4mi7LpE7a5J7BJDeEF2XF3OQz1zSr4ualeLaSug7oygjFp0jRKo5DiZM9o2z1lVJxCF3uVMZp11LoeBw1dZxsIWUiD2v4y8kY0l6g55OzO_keV0C4-PxgoIfHVKesDMwJJB3EyQQfoFDJHBKgbQ'
+                    width={60}
+                    height={60}
+                  />
+                  <Image
+                    alt='PMP logo'
+                    src='https://lh3.googleusercontent.com/aida-public/AB6AXuCopwaH9NIN3RU-ZbxGjcUXzgAEtVoeTRO_-4zue9UGHszFBg3ja8rhw7YdVSd1QTPNIEnnXxS4ApgP6YH6TuS229GSzoJF8Wzayc3crPrlfxVb_6yxtPr11eYOXvrWVybOe3FtoxOmpm7oFhVIFsN8Rs7JiQcnftdnPaJkw7vCV40NLKs8mjXX16vWq82Ia8wQkKIgxDGNFQ8caXNkiGTGieNDKIL08C3z5dB3yoEalh7EKMWE7zp6gb0cPSn0gq9to8JRMtm-VA'
+                    width={60}
+                    height={60}
+                  />
+                </div>
+                <p className='text-sm font-semibold'>
+                  Intel Cloud Solution Provider
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
