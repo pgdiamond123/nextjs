@@ -8,8 +8,14 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'lh3.googleusercontent.com',
-        port: '', // optional
-        pathname: '/**', // optional: default matches all paths
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.orientsoftware.com',
+        port: '',
+        pathname: '/**',
       },
     ],
   },

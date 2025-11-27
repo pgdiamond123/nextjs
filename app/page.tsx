@@ -1,6 +1,21 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function Home() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <div className='absolute top-0 right-0 -translate-y-1/3 translate-x-1/3'>
@@ -19,7 +34,7 @@ export default function Home() {
         </button>
       </div>
       <div className='relative z-10'>
-        <header className='py-6 px-4 sm:px-6 lg:px-8'>
+        <header className='py-3 px-4 sm:px-6 lg:px-8 relative bg-white'>
           <div className='max-w-7xl mx-auto flex justify-between items-center'>
             <div className='flex items-center space-x-2'>
               <span className='font-extrabold text-2xl text-slate-900 dark:text-white'>
@@ -28,72 +43,38 @@ export default function Home() {
               <div className='w-4 h-4 bg-red-500 rounded-full'></div>
             </div>
             <nav className='hidden lg:flex items-center space-x-8'>
-              <a
-                className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'
-                href='#'
+              <div
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
-                <span>Services</span>
-                <span className='material-symbols-outlined text-base'>
-                  expand_more
-                </span>
-              </a>
-              <a
-                className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'
-                href='#'
-              >
-                <span>Company</span>
-                <span className='material-symbols-outlined text-base'>
-                  expand_more
-                </span>
-              </a>
-              <div className='relative group'>
                 <button className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
-                  <span>Careers</span>
+                  <span>Services</span>
                   <span className='material-symbols-outlined text-base'>
                     expand_more
                   </span>
                 </button>
-                <div className='absolute top-full w-56 left-1/2 -translate-x-1/2 mt-2 bg-white dark:bg-slate-800 hidden group-hover:block z-20'>
-                  <div className='py-1'>
-                    <a
-                      className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
-                      href='#'
-                    >
-                      Job Openings
-                    </a>
-                    <a
-                      className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
-                      href='#'
-                    >
-                      Life at Orient Software
-                    </a>
-                    <a
-                      className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
-                      href='#'
-                    >
-                      Internship Programs
-                    </a>
-                    <a
-                      className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
-                      href='#'
-                    >
-                      Referral Program
-                    </a>
-                    <a
-                      className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
-                      href='#'
-                    >
-                      Career Development
-                    </a>
-                  </div>
-                </div>
               </div>
-              <a
-                className='text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'
-                href='#'
+              <div
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
-                Blog
-              </a>
+                <button className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
+                  <span>Company</span>
+                  <span className='material-symbols-outlined text-base'>
+                    expand_more
+                  </span>
+                </button>
+              </div>
+              <div>
+                <button className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
+                  <span>Careers</span>
+                </button>
+              </div>
+              <div>
+                <button className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
+                  <span>Blogs</span>
+                </button>
+              </div>
             </nav>
             <div className='hidden lg:flex items-center space-x-6'>
               <a
@@ -118,6 +99,46 @@ export default function Home() {
             <button className='lg:hidden text-slate-800 dark:text-slate-200'>
               <span className='material-symbols-outlined'>menu</span>
             </button>
+          </div>
+          <div
+            className={`absolute top-full w-full left-0 bg-white border-t border-gray-200 dark:bg-slate-800 z-20 ${
+              isHovered
+                ? 'animate-dropdown-in opacity-100 '
+                : 'animate-dropdown-out opacity-0 '
+            }`}
+          >
+            <div className='px-4 py-6'>
+              <a
+                className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
+                href='#'
+              >
+                Job Openings
+              </a>
+              <a
+                className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
+                href='#'
+              >
+                Life at Orient Software
+              </a>
+              <a
+                className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
+                href='#'
+              >
+                Internship Programs
+              </a>
+              <a
+                className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
+                href='#'
+              >
+                Referral Program
+              </a>
+              <a
+                className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
+                href='#'
+              >
+                Career Development
+              </a>
+            </div>
           </div>
         </header>
         <main>
@@ -496,214 +517,463 @@ export default function Home() {
                 </p>
               </div>
               <div className='mt-12 relative'>
-                <div className='flex overflow-x-auto snap-x snap-mandatory scrollbar-hide space-x-8 pb-4'>
-                  <div className='carousel-item shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center'>
-                    <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
-                      <p className='text-slate-600 dark:text-slate-400 grow'>
-                        &quot;Orient Software delivered a robust and scalable
-                        solution that exceeded our expectations. Their team was
-                        professional, responsive, and a pleasure to work
-                        with.&quot;
-                      </p>
-                      <div className='mt-6 flex items-center'>
-                        <Image
-                          alt='Client photo'
-                          className='rounded-full'
-                          src='https://lh3.googleusercontent.com/aida-public/AB6AXuBaYGYF5MQMMGSk66ss6-_D8qaIxpH7ayJ-FRBWLBjiWsa5j2XAap8dNvZAnS01yd_kV4CzjIKjkaNf3ZS50m_IEryb0F8RStylX5ydr1a7r1ohBjRATjdzHNQnG5dI6BIaSZ4CU6Cj4EMYH0amc9q55mEkev0Y_mkdziO63GOYMyakQuL0PMMO4qcOMD_mhN-yc5nsqQYFPqY5TEQ8Oc74chuviHIWYfZWlreMpwe5oRBJIszsv8uLbh_MoKJzZfOCI6b3LZ_-VQ'
-                          width={48}
-                          height={48}
-                        />
-                        <div className='ml-4'>
-                          <p className='font-bold text-slate-900 dark:text-white'>
-                            Jane Doe
-                          </p>
-                          <p className='text-sm text-slate-500 dark:text-slate-400'>
-                            CEO, Tech Innovators
-                          </p>
+                <Swiper
+                  slidesPerView={1}
+                  grabCursor={true}
+                  spaceBetween={20}
+                  slidesOffsetAfter={60}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  breakpoints={{
+                    640: {
+                      slidesPerView: 1,
+                      spaceBetween: 20,
+                      slidesOffsetBefore: 80,
+                      slidesOffsetAfter: 80,
+                    },
+                    768: {
+                      slidesPerView: 2,
+                      spaceBetween: 20,
+                      slidesOffsetBefore: 80,
+                      slidesOffsetAfter: 80,
+                    },
+                    1024: {
+                      slidesPerView: 3,
+                      spaceBetween: 30,
+                      slidesOffsetBefore: 80,
+                      slidesOffsetAfter: 80,
+                    },
+                  }}
+                  modules={[Pagination]}
+                >
+                  <SwiperSlide>
+                    <div className=''>
+                      <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                        <p className='text-slate-600 dark:text-slate-400 grow'>
+                          &quot;Orient Software delivered a robust and scalable
+                          solution that exceeded our expectations. Their team
+                          was professional, responsive, and a pleasure to work
+                          with.&quot;
+                        </p>
+                        <div className='mt-6 flex items-center'>
+                          <Image
+                            alt='Client photo'
+                            className='rounded-full'
+                            src='https://lh3.googleusercontent.com/aida-public/AB6AXuBaYGYF5MQMMGSk66ss6-_D8qaIxpH7ayJ-FRBWLBjiWsa5j2XAap8dNvZAnS01yd_kV4CzjIKjkaNf3ZS50m_IEryb0F8RStylX5ydr1a7r1ohBjRATjdzHNQnG5dI6BIaSZ4CU6Cj4EMYH0amc9q55mEkev0Y_mkdziO63GOYMyakQuL0PMMO4qcOMD_mhN-yc5nsqQYFPqY5TEQ8Oc74chuviHIWYfZWlreMpwe5oRBJIszsv8uLbh_MoKJzZfOCI6b3LZ_-VQ'
+                            width={48}
+                            height={48}
+                          />
+                          <div className='ml-4'>
+                            <p className='font-bold text-slate-900 dark:text-white'>
+                              Jane Doe
+                            </p>
+                            <p className='text-sm text-slate-500 dark:text-slate-400'>
+                              CEO, Tech Innovators
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className='carousel-item shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center'>
-                    <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
-                      <p className='text-slate-600 dark:text-slate-400 grow'>
-                        &quot;The extended team from Orient seamlessly
-                        integrated with our in-house developers. Their expertise
-                        in AI development was crucial for our project&apos;s
-                        success.&quot;
-                      </p>
-                      <div className='mt-6 flex items-center'>
-                        <Image
-                          alt='Client photo'
-                          className='rounded-full'
-                          src='https://lh3.googleusercontent.com/aida-public/AB6AXuD5ajN72f4ct8MLMYYaIEsCitBkGwV-E2ekEMkycZWNYOsiK6Zl3kP9Ch2y93PR8nMPkANNXGBQucpQFa2ZH4q7I0-HzgNY6UtZLis34a5yjQ3rkwDrPrO0os3zHtlNxKY2zYxoDZpPobwefbjK2ytdgPDZEZYv8cpNnRtsgCrsg_iiOtwPBdBzc0ZNHyi-2jRcdmNk1eX7CByCEaKdxsZk7KwNHcec7oxp53XeF2SpKCNLiZrlZfnLhm_K48nwdYkktDbsM694PA'
-                          width={48}
-                          height={48}
-                        />
-                        <div className='ml-4'>
-                          <p className='font-bold text-slate-900 dark:text-white'>
-                            John Smith
-                          </p>
-                          <p className='text-sm text-slate-500 dark:text-slate-400'>
-                            CTO, Future Solutions
-                          </p>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=''>
+                      <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                        <p className='text-slate-600 dark:text-slate-400 grow'>
+                          &quot;Orient Software delivered a robust and scalable
+                          solution that exceeded our expectations. Their team
+                          was professional, responsive, and a pleasure to work
+                          with.&quot;
+                        </p>
+                        <div className='mt-6 flex items-center'>
+                          <Image
+                            alt='Client photo'
+                            className='rounded-full'
+                            src='https://lh3.googleusercontent.com/aida-public/AB6AXuBaYGYF5MQMMGSk66ss6-_D8qaIxpH7ayJ-FRBWLBjiWsa5j2XAap8dNvZAnS01yd_kV4CzjIKjkaNf3ZS50m_IEryb0F8RStylX5ydr1a7r1ohBjRATjdzHNQnG5dI6BIaSZ4CU6Cj4EMYH0amc9q55mEkev0Y_mkdziO63GOYMyakQuL0PMMO4qcOMD_mhN-yc5nsqQYFPqY5TEQ8Oc74chuviHIWYfZWlreMpwe5oRBJIszsv8uLbh_MoKJzZfOCI6b3LZ_-VQ'
+                            width={48}
+                            height={48}
+                          />
+                          <div className='ml-4'>
+                            <p className='font-bold text-slate-900 dark:text-white'>
+                              Jane Doe
+                            </p>
+                            <p className='text-sm text-slate-500 dark:text-slate-400'>
+                              CEO, Tech Innovators
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className='carousel-item shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center'>
-                    <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
-                      <p className='text-slate-600 dark:text-slate-400 grow'>
-                        &quot;Their commitment to quality and their transparent
-                        process made the entire development cycle smooth. We
-                        highly recommend Orient Software for any complex
-                        software needs.&quot;
-                      </p>
-                      <div className='mt-6 flex items-center'>
-                        <Image
-                          alt='Client photo'
-                          className='rounded-full'
-                          src='https://lh3.googleusercontent.com/aida-public/AB6AXuAsUroO2JUr_ZBK1S2riJ7I-dm8DhfmMLPkSbHs8Kx2wWkE5xngEoudszusi6ruQFMvei8jyEDOVvyQ1q7-nPGnywWItsQV7M-ElDxqdxcHumr3X6CosnN8MFeW1pZRmD_6ighfOvvFqFoWyhu8JS4OQr2v7U8D9MFJYy-Vgtvmpgd-bjAMCmTqE_HguXiF1nLQyY5nh1Ts1tnPqItWushhVbwiZtD9lCi-r-2TARU4FNZu5viqLZhXIJLGAqYcfT4kutRfZfa9XA'
-                          width={48}
-                          height={48}
-                        />
-                        <div className='ml-4'>
-                          <p className='font-bold text-slate-900 dark:text-white'>
-                            Emily Johnson
-                          </p>
-                          <p className='text-sm text-slate-500 dark:text-slate-400'>
-                            Product Manager, Digital Ventures
-                          </p>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=''>
+                      <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                        <p className='text-slate-600 dark:text-slate-400 grow'>
+                          &quot;Orient Software delivered a robust and scalable
+                          solution that exceeded our expectations. Their team
+                          was professional, responsive, and a pleasure to work
+                          with.&quot;
+                        </p>
+                        <div className='mt-6 flex items-center'>
+                          <Image
+                            alt='Client photo'
+                            className='rounded-full'
+                            src='https://lh3.googleusercontent.com/aida-public/AB6AXuBaYGYF5MQMMGSk66ss6-_D8qaIxpH7ayJ-FRBWLBjiWsa5j2XAap8dNvZAnS01yd_kV4CzjIKjkaNf3ZS50m_IEryb0F8RStylX5ydr1a7r1ohBjRATjdzHNQnG5dI6BIaSZ4CU6Cj4EMYH0amc9q55mEkev0Y_mkdziO63GOYMyakQuL0PMMO4qcOMD_mhN-yc5nsqQYFPqY5TEQ8Oc74chuviHIWYfZWlreMpwe5oRBJIszsv8uLbh_MoKJzZfOCI6b3LZ_-VQ'
+                            width={48}
+                            height={48}
+                          />
+                          <div className='ml-4'>
+                            <p className='font-bold text-slate-900 dark:text-white'>
+                              Jane Doe
+                            </p>
+                            <p className='text-sm text-slate-500 dark:text-slate-400'>
+                              CEO, Tech Innovators
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className='mt-8 flex justify-center space-x-3'>
-                  <button className='w-3 h-3 bg-slate-300 dark:bg-slate-700 rounded-full'></button>
-                  <button className='w-3 h-3 bg-red-500 rounded-full'></button>
-                  <button className='w-3 h-3 bg-slate-300 dark:bg-slate-700 rounded-full'></button>
-                </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=''>
+                      <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                        <p className='text-slate-600 dark:text-slate-400 grow'>
+                          &quot;Orient Software delivered a robust and scalable
+                          solution that exceeded our expectations. Their team
+                          was professional, responsive, and a pleasure to work
+                          with.&quot;
+                        </p>
+                        <div className='mt-6 flex items-center'>
+                          <Image
+                            alt='Client photo'
+                            className='rounded-full'
+                            src='https://lh3.googleusercontent.com/aida-public/AB6AXuBaYGYF5MQMMGSk66ss6-_D8qaIxpH7ayJ-FRBWLBjiWsa5j2XAap8dNvZAnS01yd_kV4CzjIKjkaNf3ZS50m_IEryb0F8RStylX5ydr1a7r1ohBjRATjdzHNQnG5dI6BIaSZ4CU6Cj4EMYH0amc9q55mEkev0Y_mkdziO63GOYMyakQuL0PMMO4qcOMD_mhN-yc5nsqQYFPqY5TEQ8Oc74chuviHIWYfZWlreMpwe5oRBJIszsv8uLbh_MoKJzZfOCI6b3LZ_-VQ'
+                            width={48}
+                            height={48}
+                          />
+                          <div className='ml-4'>
+                            <p className='font-bold text-slate-900 dark:text-white'>
+                              Jane Doe
+                            </p>
+                            <p className='text-sm text-slate-500 dark:text-slate-400'>
+                              CEO, Tech Innovators
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=''>
+                      <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                        <p className='text-slate-600 dark:text-slate-400 grow'>
+                          &quot;Orient Software delivered a robust and scalable
+                          solution that exceeded our expectations. Their team
+                          was professional, responsive, and a pleasure to work
+                          with.&quot;
+                        </p>
+                        <div className='mt-6 flex items-center'>
+                          <Image
+                            alt='Client photo'
+                            className='rounded-full'
+                            src='https://lh3.googleusercontent.com/aida-public/AB6AXuBaYGYF5MQMMGSk66ss6-_D8qaIxpH7ayJ-FRBWLBjiWsa5j2XAap8dNvZAnS01yd_kV4CzjIKjkaNf3ZS50m_IEryb0F8RStylX5ydr1a7r1ohBjRATjdzHNQnG5dI6BIaSZ4CU6Cj4EMYH0amc9q55mEkev0Y_mkdziO63GOYMyakQuL0PMMO4qcOMD_mhN-yc5nsqQYFPqY5TEQ8Oc74chuviHIWYfZWlreMpwe5oRBJIszsv8uLbh_MoKJzZfOCI6b3LZ_-VQ'
+                            width={48}
+                            height={48}
+                          />
+                          <div className='ml-4'>
+                            <p className='font-bold text-slate-900 dark:text-white'>
+                              Jane Doe
+                            </p>
+                            <p className='text-sm text-slate-500 dark:text-slate-400'>
+                              CEO, Tech Innovators
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=''>
+                      <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                        <p className='text-slate-600 dark:text-slate-400 grow'>
+                          &quot;Orient Software delivered a robust and scalable
+                          solution that exceeded our expectations. Their team
+                          was professional, responsive, and a pleasure to work
+                          with.&quot;
+                        </p>
+                        <div className='mt-6 flex items-center'>
+                          <Image
+                            alt='Client photo'
+                            className='rounded-full'
+                            src='https://lh3.googleusercontent.com/aida-public/AB6AXuBaYGYF5MQMMGSk66ss6-_D8qaIxpH7ayJ-FRBWLBjiWsa5j2XAap8dNvZAnS01yd_kV4CzjIKjkaNf3ZS50m_IEryb0F8RStylX5ydr1a7r1ohBjRATjdzHNQnG5dI6BIaSZ4CU6Cj4EMYH0amc9q55mEkev0Y_mkdziO63GOYMyakQuL0PMMO4qcOMD_mhN-yc5nsqQYFPqY5TEQ8Oc74chuviHIWYfZWlreMpwe5oRBJIszsv8uLbh_MoKJzZfOCI6b3LZ_-VQ'
+                            width={48}
+                            height={48}
+                          />
+                          <div className='ml-4'>
+                            <p className='font-bold text-slate-900 dark:text-white'>
+                              Jane Doe
+                            </p>
+                            <p className='text-sm text-slate-500 dark:text-slate-400'>
+                              CEO, Tech Innovators
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=''>
+                      <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                        <p className='text-slate-600 dark:text-slate-400 grow'>
+                          &quot;Orient Software delivered a robust and scalable
+                          solution that exceeded our expectations. Their team
+                          was professional, responsive, and a pleasure to work
+                          with.&quot;
+                        </p>
+                        <div className='mt-6 flex items-center'>
+                          <Image
+                            alt='Client photo'
+                            className='rounded-full'
+                            src='https://lh3.googleusercontent.com/aida-public/AB6AXuBaYGYF5MQMMGSk66ss6-_D8qaIxpH7ayJ-FRBWLBjiWsa5j2XAap8dNvZAnS01yd_kV4CzjIKjkaNf3ZS50m_IEryb0F8RStylX5ydr1a7r1ohBjRATjdzHNQnG5dI6BIaSZ4CU6Cj4EMYH0amc9q55mEkev0Y_mkdziO63GOYMyakQuL0PMMO4qcOMD_mhN-yc5nsqQYFPqY5TEQ8Oc74chuviHIWYfZWlreMpwe5oRBJIszsv8uLbh_MoKJzZfOCI6b3LZ_-VQ'
+                            width={48}
+                            height={48}
+                          />
+                          <div className='ml-4'>
+                            <p className='font-bold text-slate-900 dark:text-white'>
+                              Jane Doe
+                            </p>
+                            <p className='text-sm text-slate-500 dark:text-slate-400'>
+                              CEO, Tech Innovators
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className=''>
+                      <div className='bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 h-full flex flex-col'>
+                        <p className='text-slate-600 dark:text-slate-400 grow'>
+                          &quot;Orient Software delivered a robust and scalable
+                          solution that exceeded our expectations. Their team
+                          was professional, responsive, and a pleasure to work
+                          with.&quot;
+                        </p>
+                        <div className='mt-6 flex items-center'>
+                          <Image
+                            alt='Client photo'
+                            className='rounded-full'
+                            src='https://lh3.googleusercontent.com/aida-public/AB6AXuBaYGYF5MQMMGSk66ss6-_D8qaIxpH7ayJ-FRBWLBjiWsa5j2XAap8dNvZAnS01yd_kV4CzjIKjkaNf3ZS50m_IEryb0F8RStylX5ydr1a7r1ohBjRATjdzHNQnG5dI6BIaSZ4CU6Cj4EMYH0amc9q55mEkev0Y_mkdziO63GOYMyakQuL0PMMO4qcOMD_mhN-yc5nsqQYFPqY5TEQ8Oc74chuviHIWYfZWlreMpwe5oRBJIszsv8uLbh_MoKJzZfOCI6b3LZ_-VQ'
+                            width={48}
+                            height={48}
+                          />
+                          <div className='ml-4'>
+                            <p className='font-bold text-slate-900 dark:text-white'>
+                              Jane Doe
+                            </p>
+                            <p className='text-sm text-slate-500 dark:text-slate-400'>
+                              CEO, Tech Innovators
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </div>
           </section>
           <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950'>
-            <div className='max-w-7xl mx-auto'>
-              <div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8 items-center'>
+            <Swiper
+              loop={true}
+              slidesPerView={3}
+              grabCursor={true}
+              spaceBetween={20}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+              }}
+              speed={1500}
+              breakpoints={{
+                768: {
+                  slidesPerView: 4,
+                },
+                1024: {
+                  slidesPerView: 7,
+                },
+              }}
+              style={{ transitionTimingFunction: 'linear' }}
+              modules={[Autoplay]}
+              className='mb-10'
+            >
+              <SwiperSlide>
                 <Image
-                  alt='Conexus logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuAbZP4MQQFFAzdbswTgUQyRGfPn0-6awYmdRODiUZcjtn5RrcXrfrkbpX3yGV7wdJRDPEOdQlsb3nkeWGMvuwODbRDuGB6GVpEWHo6747QwbOAbNtf0PtNjgbSJ_nDmqaPsZjERxPx4vRes3j_XwgIWeZibX9X4eSKXQuS3ZOkfrfT9s8eM9LO2Qv29CSuw6cH8m-9Cy2-P2Xg7VLk620rYLb84dOtOAzMLlvJH22TqQqLcmct4MS-xbqXt-qgyZGcngDocnTX_2Q'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-pumptap.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Netwealth logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuBq4GymsCCu1M1EJtPtCI38CW4EOkJW0qA94cdw3-TL5tSqqS2pgipnc7XYSl5gNQdKHcugwxagUciplfwicwKaPptMFl0nGayNEiEKUk4OPiH4ftmzbGm8ixCqv1HJo8mgnfYbSyDsjbZrBQBTA_WaXdFCyCwnIuVcPPw-psbqr5knfoLCAdmhFPMsti831tQJ0NaiNSk4Ukc6HNecWqS-9-JtoDz58Nfqy5kjk1COyFUHRxsLtTdIBAwwbVLTRuUwcPBrEgoThw'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-rencore.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Dekra logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuAbsW49P-g77B3c5Cgr8K931FDQ7Oy8aUDF515h39Pmnlv9TR2_P09La44avEg8Jcr-PfKNFIXdHsf19qhLigvaM-iP2Jct7KSgusK5tJRQ2P_YEeulMUbNvvR07fZGjvYCwOqwlBzJFg9lNURQZUdR_1-KImST4T9IxSyPj58Uv3tqF6ZFfw4m0gF_KqOmbUg8tshXROllv3pYuh5dapEeokfrTIdG6n0Px2Twfu-z1m6Q_9_ED2SW-V9BssWiytpznFVO3jQ_pw'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-trustana.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Wotif logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuCv_B9N-3mzeQzMPN4Qfn5GLpUDgFfTFW7HbJXZNeXepBxOkud0hkyLg4wtZWUij64hwvP5JLRPwBcIq_KrcHCBo2UqSCTAvQcWwvmmnUgTQH7m63B4hbbu5_qq6tja9ZeCZ6yrwiCxT-Szp1Yx5S0mDC8WTy2BLW_I-ssa5vah4h22OJZakZn3nzFIq-WBSuCpciG8mp9J0WL18QflYUAdl8sxr563j30fIn_VlP-VRGBNV3RKrpnstvmcA5Cph7TLEX9bq_okLw'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-fishwell.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Espos logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuAwpY4pzOX3d0Es14HW3Jc45eXpiir8T5Gs6E4-jk_Aop17YoQsSYgNJc_6HLHIwkn7loNDgxhZXbyKZ2Ny7tDZhoqzawTAR4DRVa-oaW820jrSIzMpEo9fCBM40TEHpJ_7QXZrSPcm7T_NatkbnOCmCriGT2ACPnygG8tVCuTRjB0YKprajUnrJjqi2Jt-SUe-XaAtBxTJejb47gG7ej9TTk65UMOF63n-VKqjb9aXlZIV9p2flQHiSPWKxHeJGZWsTuW911DYiQ'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-xeppo.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Kikora logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuCesFZSzwqNpypzgYxKZYVwJhiKLCrCg56ACmAhL8TC3lVQkoYDEmI_fFCxtVzUUH55t2V-LZnFqh-4gbBrC_NJcDBhERx8L6H61HREbC8wZciXHLe1OgwGuiPxRGRhgseyacdY61h97y0EsPleM2cKe4SvHrzasIgTAVsdpCNRwsGLbtG8eZ9A_iRm-iLElWD3c9QPDg82sBnefjIKn8kKHdyMx9I5nwbolIY9GWSJ5PSdJiJaB6opVzFIRiCov1FXv80AiY9vWg'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-espos.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Penetrac logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuCnyhcsTcZSCo7tpmP_gLcee72gIvxMTE4uJMI6puFeHCCVnxLXVtdDLkWnWzDpQiYXpLrzRrn-hH175GYPq5PhdXth69fjopTYWEkmPTCJxsQI9GZxTguBI3JoZxu9bB2CqhlxuvmdDlAKUQa5RJbfS-QHiCLe_N1gnZHgALYCsjPBPB3cU0UtjjUFirgbl-6akB429hTn7qDmGPQoUbf_pWfZY5cVqOXFgIs0sua57pftoGLR6kojh2vnrrm9pUwJOij0GRBbGw'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-plenti.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='OPEN4 logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuC2o5NWSyM4V7ewHno-QVw8Osc1MjjUabbb223T9QZstH0HqZ9fZbMOKjm1Fm9F-i8w5dIMz6yzBhnRQbBkslmDA-YpAPgYvCOAcJYw1RtgM4AQ4WE87f6jPiBX3t42G9Ytnb1QF1QDKdGXABcobvPL4xWPvxmq6vvlxV67W3hYdKzuX-fulNO7PBryx7zo4BPYQFb1hQWrmAvR0GgkIkRGZeOuCe568Vd5eZadHLiTY44nb3_1l2zVNq_RjgSP99Fze0615zLYOA'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-ntuc.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='InCloud logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuA_s_rlaIkZdFU8RBFRPkmoISWFulYD2KLn-BMEOFvv4M4tu-K8CYywfcXXxUlM4JEAlD_JwtCYTPLSgHl2Ken-19rRazm7RUEE4SZ3nYdkMfbCGW_splkLbZcKhmpASeSiRO-nq1QuxjHFzuoNaNCAkpYV381PGIFhSpRO3wFhlJDLjA7mMIXv1w04e763lQD8XffZd7v5EMm05FK2MwuQz2mI4KNRbTg4EP7VSp66n-Zrrs7tGAYtBw9G6w7Yc0jxzGTxKr60MA'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-incloud.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+            </Swiper>
+            <Swiper
+              loop={true}
+              slidesPerView={3}
+              grabCursor={true}
+              spaceBetween={20}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+                reverseDirection: true,
+              }}
+              speed={1500}
+              breakpoints={{
+                768: {
+                  slidesPerView: 4,
+                },
+                1024: {
+                  slidesPerView: 7,
+                },
+              }}
+              style={{ transitionTimingFunction: 'linear' }}
+              modules={[Autoplay]}
+            >
+              <SwiperSlide>
                 <Image
-                  alt='Xeppo logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuDmXWYfeydn3cC1Em608kWhUxKc78bMYrt6KJ6B3RNOYrxZAFzD-k9bLPDM2KjxiJFnc__9KP0_khwWT1NQsHzAXqxC7iVzZF9qhs2dCFno0QKrZtqT_zhroLZfMwlV5j6vE9U1idLfxNUy7nb4RmPe2fcTiduP3j2NiIML6jue7G0F6eSlJJRAwbCNvBwKSLk_b83ys8sAscHtXzO3Ufe3IQisBvbJG-NR2UUDVZHStno0-l2_oAIbquDRrh4PqPuBXUgP3Sl4Yw'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-pumptap.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Rencore logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuDtsF6QlhXUkFV77zHi0pjB8tiYc74oW123vZ-tvMc-lMcgGym450Dejbnh_cDNC3xR7Vz4y6BL7isIJoSacZdXQpR9r8uHj2EP_dF9wBKoRHFyjVBINpCcQUPANu0IT5KhEocCYXbyZL9DTIwfINhpETgTWahDjlFaVOgIC6KdwO98SJlu5rgIN3tvQ74OiMLqLsXJUbMJyltP7Ei5f_J-H9-wu18iEOpS92Ca5UwgcK62ZtVdDEgdvrlQ5mSLUc0OwCEIHtj0mQ'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-rencore.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='PumpTap logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuBbC3iadAv00NX6IhfskkVgtHfw3ZWo_XZ44jbY_v3oSGulU-txdtpWA-5yti_ULrAL20_D_jTKnRMTefk93GrLSOadAXv1CewtA2t0fDmzlSaUpVwxYNBDBzHWp10ee-q9Y-u5DbIW-qexQFnrEz1k7NYLMpUZCrAPzdelfGlnpAy4FY7-zWev6Nws5TNTfLEGyKJEEIots6SzV1MuFA1MFxqF0TEhzHMxOCi1WMMTTXscG5XcImj19ezWwbuqKJkQFq4WLcVlUg'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-trustana.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Indigo logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuA00U8KA1xylj1aVOZ6Odjk7SCnt6jbCIpN14clm8EKZboQFgo1DO6eAn-kflpcHXZQMTbXtbbdbnWBNMaJ7ieAmNKFQSMrRIE5tw4Bg8jn_9PrEyXD3oHbbDSG5xxPvweDFEicOzdZ19fZCj4B-1aFvZ3WCt5jyDhYm5tgsAHD5r2xs-FGHrjIOsW-eS4fbGhIV5_3mT8dy5bEO0XYahfBpZUUfPSMmsb-93LBryIh_Dy8LAWNPSshX02KI3C_UzT11h6wh4GEfg'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-fishwell.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Plenti logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuCxKWWQ-_F8_ryY6GcSw2r1pl2hboKdxutM4nvbg1VZNr8Rvss4lK1cm1ABuaJ9jWaQjOPn84ovo4cMSh1QlVuIrIeWX0_FdYVzoPMLsbpp_U9dGyJ39-KnSq8aGRN6ws5r93nlTblA4wF8fgb37b9TyL_5Ubf3AP4MyOheRuTLv8-Q4BhOyk9QFE2bCc20E4O8l5tsUWeu5PR-FL0H0KYKCLuAGTKd4-Fl0lbNMmxrnUPPBIKB3S9NvIvnBt9q6xF6MMgcLYhRIA'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-xeppo.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Vtnz logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuB5KrtJ7bX-yslYl2piSMOlvTi8EmrfA3I_rW2T-yDxiU6ZI1SdxwWrZBDLn-Tph4KYNkr2LaA3AuCpeo9LRaU9hDOo0WIu53ijBI7rskrBFpKvf0n0SUjFV5Qljpuo--qb7SwW04BpckWJqYsOPHrxOhfWzcmVwiiH3MwCMPLievS6K6d5chRzUTYAcKBKbaAfYeraApC13GqW0L1uxnPtz3TnLszfYvwzn77LHuhxTEfQkns6aMen9liUFrJjUgU2GTBtkCAbRw'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-espos.webp'
+                  width={100}
+                  height={50}
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
-                  alt='Excosoft logo'
-                  className='mx-auto'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuBx_p1ysn0FXfLeyRDmQa1P63b7blVRaV-7pr_yRg1lU-1TiI_bMKkijF30MWl21ieW1AtHpfiK8WZJM-1Ag_tgZ_Z8B5L6gU6C_uEL36UXc0DzJRVjKQjtJzowZ2Zen6pqqfrMTZ2Ws9DNxnQ-WeaoRfT0565mE4Xb1dRDutI2ybuglRCmSMxYrM5TYzfZburmyaotiBVmq7_1zHl9KImQYjd9PriI6qUM78yIbULBcOJRCLBFKmxdDBWT74wzhX-CgEBz36rAbA'
-                  width={160}
-                  height={160}
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-plenti.webp'
+                  width={100}
+                  height={50}
                 />
-              </div>
-            </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-ntuc.webp'
+                  width={100}
+                  height={50}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  alt='company photo'
+                  src='https://www.orientsoftware.com/Themes/Content/Images/home/logo-incloud.webp'
+                  width={100}
+                  height={50}
+                />
+              </SwiperSlide>
+            </Swiper>
           </section>
           <section className='py-16 sm:py-24 px-4 sm:px-6 lg:px-8'>
             <div className='max-w-7xl mx-auto text-center'>

@@ -1,9 +1,33 @@
 @import 'tailwindcss';
 @import 'material-symbols';
+@import 'swiper/css';
+@import 'swiper/css/pagination';
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+@keyframes dropdown-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdown-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
 }
 
 @layer utilities {
@@ -14,6 +38,13 @@
 
   .bg-background-light {
     background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
+  }
+  .animate-dropdown-in {
+    animation: dropdown-in 0.18s ease-out;
+  }
+
+  .animate-dropdown-out {
+    animation: dropdown-out 0.15s ease-in forwards;
   }
 }
 
@@ -34,4 +65,13 @@ body {
   background: rgb(248 250 252 / var(--tw-bg-opacity, 1));
   color: var(--foreground);
   font-family: 'Moderat', 'Moderat Fallback';
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-red-500) !important;
 }
