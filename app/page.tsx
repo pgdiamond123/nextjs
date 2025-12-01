@@ -1,21 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function Home() {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
   return (
     <div className='relative min-h-screen overflow-hidden'>
       <div className='absolute top-0 right-0 -translate-y-1/3 translate-x-1/3'>
@@ -34,48 +23,235 @@ export default function Home() {
         </button>
       </div>
       <div className='relative z-10'>
-        <header className='py-3 px-4 sm:px-6 lg:px-8 relative bg-white'>
-          <div className='max-w-7xl mx-auto flex justify-between items-center'>
+        <header className='py-3 px-4 sm:px-6 lg:px-8 relative bg-white z-50 shadow-sm'>
+          {/* 
+     IMPORTANT: This inner div is usually "relative", but we keep it "static" (default) 
+     so that the dropdowns position themselves based on the <header> (which is full width).
+  */}
+          <div className='max-w-7xl mx-auto flex justify-between items-center static'>
+            {/* Logo */}
             <div className='flex items-center space-x-2'>
               <span className='font-extrabold text-2xl text-slate-900 dark:text-white'>
                 orient
               </span>
               <div className='w-4 h-4 bg-red-500 rounded-full'></div>
             </div>
+
+            {/* Navigation */}
             <nav className='hidden lg:flex items-center space-x-8'>
-              <div
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
+              {/* 
+         1. SERVICES (MEGA MENU EXAMPLE) 
+         Note: "static" class ensures the absolute child uses the Header as reference, not this div.
+      */}
+              <div className='group static'>
+                <button className='flex items-center space-x-1 py-4 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
                   <span>Services</span>
-                  <span className='material-symbols-outlined text-base'>
+                  <span className='material-symbols-outlined text-base group-hover:rotate-180 transition-transform duration-300'>
                     expand_more
                   </span>
                 </button>
+
+                {/* Full Width Dropdown Wrapper */}
+                <div className='absolute top-full left-0 w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 border-t border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xl'>
+                  {/* Inner Container to align content with your page width */}
+                  <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
+                    <div className='grid grid-cols-3 gap-8'>
+                      {/* Column 1 */}
+                      <div>
+                        <h3 className='font-bold text-slate-900 dark:text-white mb-4 text-lg'>
+                          Software Development
+                        </h3>
+                        <ul className='space-y-3'>
+                          <li>
+                            <a
+                              href='#'
+                              className='text-slate-600 dark:text-slate-400 hover:text-red-500 block'
+                            >
+                              Custom Software
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href='#'
+                              className='text-slate-600 dark:text-slate-400 hover:text-red-500 block'
+                            >
+                              Web App Development
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href='#'
+                              className='text-slate-600 dark:text-slate-400 hover:text-red-500 block'
+                            >
+                              Mobile App Development
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      {/* Column 2 */}
+                      <div>
+                        <h3 className='font-bold text-slate-900 dark:text-white mb-4 text-lg'>
+                          Emerging Tech
+                        </h3>
+                        <ul className='space-y-3'>
+                          <li>
+                            <a
+                              href='#'
+                              className='text-slate-600 dark:text-slate-400 hover:text-red-500 block'
+                            >
+                              Artificial Intelligence
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href='#'
+                              className='text-slate-600 dark:text-slate-400 hover:text-red-500 block'
+                            >
+                              Internet of Things (IoT)
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href='#'
+                              className='text-slate-600 dark:text-slate-400 hover:text-red-500 block'
+                            >
+                              Blockchain
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      {/* Column 3 - Featured */}
+                      <div className='bg-slate-50 dark:bg-slate-700 p-6 rounded-lg'>
+                        <h3 className='font-bold text-red-500 mb-2'>
+                          Featured Case Study
+                        </h3>
+                        <p className='text-sm text-slate-600 dark:text-slate-300 mb-4'>
+                          How we helped a fintech startup scale to 1M users.
+                        </p>
+                        <a
+                          href='#'
+                          className='text-sm font-semibold underline hover:text-red-500'
+                        >
+                          Read story &rarr;
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
+
+              {/* 2. COMPANY (FULL WIDTH) */}
+              <div className='group static'>
+                <button className='flex items-center space-x-1 py-4 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
                   <span>Company</span>
-                  <span className='material-symbols-outlined text-base'>
+                  <span className='material-symbols-outlined text-base group-hover:rotate-180 transition-transform duration-300'>
                     expand_more
                   </span>
                 </button>
+
+                <div className='absolute top-full left-0 w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 border-t border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xl'>
+                  <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6'>
+                    <div className='flex space-x-12'>
+                      <a href='#' className='group/item'>
+                        <div className='font-semibold text-slate-900 dark:text-white group-hover/item:text-red-500'>
+                          About Us
+                        </div>
+                        <div className='text-sm text-slate-500'>
+                          Our story and values
+                        </div>
+                      </a>
+                      <a href='#' className='group/item'>
+                        <div className='font-semibold text-slate-900 dark:text-white group-hover/item:text-red-500'>
+                          Leadership
+                        </div>
+                        <div className='text-sm text-slate-500'>
+                          Meet the team
+                        </div>
+                      </a>
+                      <a href='#' className='group/item'>
+                        <div className='font-semibold text-slate-900 dark:text-white group-hover/item:text-red-500'>
+                          Awards
+                        </div>
+                        <div className='text-sm text-slate-500'>
+                          Our achievements
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <button className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
+
+              {/* 3. CAREERS (FULL WIDTH) */}
+              <div className='group static'>
+                <button className='flex items-center space-x-1 py-4 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
                   <span>Careers</span>
+                  {/* Arrow added for consistency */}
+                  <span className='material-symbols-outlined text-base group-hover:rotate-180 transition-transform duration-300'>
+                    expand_more
+                  </span>
                 </button>
+
+                <div className='absolute top-full left-0 w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 border-t border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xl'>
+                  <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6'>
+                    {/* Simple grid list for careers */}
+                    <div className='grid grid-cols-4 gap-4'>
+                      <a
+                        className='block p-3 rounded hover:bg-slate-50 dark:hover:bg-slate-700'
+                        href='#'
+                      >
+                        <div className='font-semibold text-slate-900 dark:text-white hover:text-red-500'>
+                          Job Openings
+                        </div>
+                        <div className='text-xs text-slate-500 mt-1'>
+                          Join our team
+                        </div>
+                      </a>
+                      <a
+                        className='block p-3 rounded hover:bg-slate-50 dark:hover:bg-slate-700'
+                        href='#'
+                      >
+                        <div className='font-semibold text-slate-900 dark:text-white hover:text-red-500'>
+                          Life at Orient
+                        </div>
+                        <div className='text-xs text-slate-500 mt-1'>
+                          Culture & Perks
+                        </div>
+                      </a>
+                      <a
+                        className='block p-3 rounded hover:bg-slate-50 dark:hover:bg-slate-700'
+                        href='#'
+                      >
+                        <div className='font-semibold text-slate-900 dark:text-white hover:text-red-500'>
+                          Internship
+                        </div>
+                        <div className='text-xs text-slate-500 mt-1'>
+                          Start your career
+                        </div>
+                      </a>
+                      <a
+                        className='block p-3 rounded hover:bg-slate-50 dark:hover:bg-slate-700'
+                        href='#'
+                      >
+                        <div className='font-semibold text-slate-900 dark:text-white hover:text-red-500'>
+                          Career Path
+                        </div>
+                        <div className='text-xs text-slate-500 mt-1'>
+                          Growth opportunities
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
+
               <div>
-                <button className='flex items-center space-x-1 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
+                <button className='flex items-center space-x-1 py-4 text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-500 transition-colors'>
                   <span>Blogs</span>
                 </button>
               </div>
             </nav>
+
+            {/* Right Actions */}
             <div className='hidden lg:flex items-center space-x-6'>
               <a
                 className='bg-red-500 text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity'
@@ -96,49 +272,11 @@ export default function Home() {
                 </a>
               </div>
             </div>
+
+            {/* Mobile Menu Toggle */}
             <button className='lg:hidden text-slate-800 dark:text-slate-200'>
               <span className='material-symbols-outlined'>menu</span>
             </button>
-          </div>
-          <div
-            className={`absolute top-full w-full left-0 bg-white border-t border-gray-200 dark:bg-slate-800 z-20 ${
-              isHovered
-                ? 'animate-dropdown-in opacity-100 '
-                : 'animate-dropdown-out opacity-0 '
-            }`}
-          >
-            <div className='px-4 py-6'>
-              <a
-                className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
-                href='#'
-              >
-                Job Openings
-              </a>
-              <a
-                className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
-                href='#'
-              >
-                Life at Orient Software
-              </a>
-              <a
-                className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
-                href='#'
-              >
-                Internship Programs
-              </a>
-              <a
-                className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
-                href='#'
-              >
-                Referral Program
-              </a>
-              <a
-                className='block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 dark:hover:text-red-500'
-                href='#'
-              >
-                Career Development
-              </a>
-            </div>
           </div>
         </header>
         <main>
